@@ -27,7 +27,8 @@ export default function Page() {
             backgroundColor: "#ccc",
             color: "white",
             padding: 10,
-            borderRadius: 25,
+            borderRadius: 10,
+            paddingHorizontal: 40,
             margin: 20,
             textAlign: "center",
           }}

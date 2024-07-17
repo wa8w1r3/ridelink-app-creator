@@ -9,9 +9,12 @@ import {
   Platform,
   TextInput,
   TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 
 import { primaryColor } from "../constants";
+import RidelinkButton from "../components/RidelinkButton";
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -29,73 +32,82 @@ export default function Page() {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}
-    >
-      <Image
-        source={require("../assets/images/Logo-01.png")}
-        style={styles.logo}
-        contentFit="contain"
-        transition={1000}
-      />
-
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="First Name"
-          value={firstName}
-          onChangeText={setFirstName}
-          style={styles.input}
-          autoCapitalize="none"
-          cursorColor={primaryColor}
-        />
-        <TextInput
-          placeholder="Last Name"
-          value={lastName}
-          onChangeText={setLastName}
-          style={styles.input}
-          autoCapitalize="none"
-          cursorColor={primaryColor}
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/Logo-01.png")}
+          style={styles.logo}
+          contentFit="contain"
+          transition={1000}
         />
 
-        <TextInput
-          placeholder="Contact"
-          value={contact}
-          onChangeText={setContact}
-          style={styles.input}
-          autoCapitalize="none"
-          cursorColor={primaryColor}
-          keyboardType="phone-pad"
-        />
-        <TextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-          style={styles.input}
-          keyboardType="email-address"
-          autoCapitalize="none"
-          cursorColor={primaryColor}
-        />
-        <TextInput
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          style={styles.input}
-          secureTextEntry
-          cursorColor={primaryColor}
-        />
+        <View style={styles.inputContainer}>
+          <TextInput
+            placeholder="First Name"
+            value={firstName}
+            onChangeText={setFirstName}
+            style={styles.input}
+            autoCapitalize="none"
+            cursorColor={primaryColor}
+          />
+          <TextInput
+            placeholder="Last Name"
+            value={lastName}
+            onChangeText={setLastName}
+            style={styles.input}
+            autoCapitalize="none"
+            cursorColor={primaryColor}
+          />
 
-        <TouchableOpacity onPress={handleSignUp} style={styles.button}>
-          <Text style={styles.buttonText}>Signup</Text>
-        </TouchableOpacity>
-        <View style={styles.linkContainer}>
-          <Text>Already have an account?</Text>
-          <Link href="/login">
-            <Text style={styles.linkText}> Login</Text>
-          </Link>
+          <TextInput
+            placeholder="Contact"
+            value={contact}
+            onChangeText={setContact}
+            style={styles.input}
+            autoCapitalize="none"
+            cursorColor={primaryColor}
+            keyboardType="phone-pad"
+          />
+          <TextInput
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            style={styles.input}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            cursorColor={primaryColor}
+          />
+          <TextInput
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            style={styles.input}
+            secureTextEntry
+            cursorColor={primaryColor}
+          />
+
+          {/* <TouchableOpacity onPress={handleSignUp} style={styles.button}>
+            <Text style={styles.buttonText}>Signup</Text>
+          </TouchableOpacity> */}
+
+          <View style={{ width: "100%" }}>
+            <RidelinkButton
+              title="Signup"
+              onPress={() => {
+                handleSignUp();
+              }}
+              style={{ marginVertical: 10 }}
+            />
+          </View>
+          <View style={styles.linkContainer}>
+            <Text>Already have an account?</Text>
+            <Link href="/login">
+              <Text style={styles.linkText}> Login</Text>
+            </Link>
+          </View>
         </View>
       </View>
-    </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -122,11 +134,10 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     padding: 10,
-    paddingHorizontal: 25,
     marginVertical: 10,
     borderWidth: 1,
     borderColor: primaryColor,
-    borderRadius: 25,
+    borderRadius: 10,
     borderCurve: "continuous",
   },
 
