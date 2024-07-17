@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { useRef, useState } from "react";
+import { StyleSheet, Text, View, Pressable, SafeAreaView } from "react-native";
 import WelcomeScreen from "../components/WelcomeScreen";
 import OnBoardingScreenThree from "../components/OnBoardingSCreenThree";
 import OnBoardingScreenTwo from "../components/OnBoardingScreenTwo";
@@ -8,28 +8,33 @@ import RidelinkButton from "../components/RidelinkButton";
 import { Link, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { primaryColor } from "../constants";
+import PagerView from "react-native-pager-view";
 
 export default function Page() {
   const [display, setDisplay] = useState(0);
+  const pagerViewRef = useRef(null);
 
   return (
     <View style={styles.container}>
-      {display == 0 ? <WelcomeScreen /> : null}
-      {display == 1 ? <OnBoardingScreenOne /> : null}
-      {display == 2 ? <OnBoardingScreenTwo /> : null}
-      {display == 3 ? <OnBoardingScreenThree /> : null}
-      <Link href="/(drawer)">Dashboard</Link>
-      <RidelinkButton
-        title="Next"
-        onPress={() => {
-          if (display === 3) {
-            router.push("login");
-            return;
-          }
-          setDisplay(display + 1);
-        }}
-        style={{ marginBottom: 50 }}
-      />
+      <PagerView
+        style={styles.container}
+        ref={pagerViewRef}
+        initialPage={0}
+        onPageSelected={(e) => setDisplay(e.nativeEvent.position)}
+      >
+        <View style={styles.page} key="1">
+          <WelcomeScreen />
+        </View>
+        <View style={styles.page} key="2">
+          <OnBoardingScreenOne />
+        </View>
+        <View style={styles.page} key="3">
+          <OnBoardingScreenTwo />
+        </View>
+        <View style={styles.page} key="4">
+          <OnBoardingScreenThree />
+        </View>
+      </PagerView>
       <View style={styles.indicatorContainer}>
         {[0, 1, 2, 3].map((index) => (
           <Pressable
@@ -38,7 +43,10 @@ export default function Page() {
               styles.indicator,
               display === index ? { backgroundColor: primaryColor } : null,
             ]}
-            onPress={() => setDisplay(index)}
+            onPress={() => {
+              console.log(index);
+              pagerViewRef.current?.setPage(index);
+            }}
           />
         ))}
       </View>
@@ -49,10 +57,12 @@ export default function Page() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  page: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  container: {
+    flex: 1,
   },
   indicatorContainer: {
     flexDirection: "row",
