@@ -19,7 +19,7 @@ export default function Page() {
           color: "#666",
         }}
       >
-        Affordable airpot travel to and from Entebbe International Airport
+        Affordable airport travel to and from Entebbe International Airport
       </Text>
       <Pressable>
         <Text
@@ -28,6 +28,7 @@ export default function Page() {
             color: "white",
             padding: 10,
             borderRadius: 10,
+            borderCurve: "continuous",
             paddingHorizontal: 40,
             margin: 20,
             textAlign: "center",

@@ -50,8 +50,7 @@ export default function Page() {
             />
           ))}
         </View>
-
-        <StatusBar style="dark" />
+        <StatusBar style="dark"/>
       </View>
     </SafeAreaView>
   );

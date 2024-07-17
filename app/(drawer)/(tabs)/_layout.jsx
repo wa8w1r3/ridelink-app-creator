@@ -86,7 +86,7 @@ export default function Layout() {
       <Tabs.Screen
         name="airpot"
         options={{
-          tabBarLabel: "Airpot",
+          tabBarLabel: "Airport",
           tabBarIcon: ({ color, size }) => (
             <Entypo name="aircraft" color={color} size={size} />
           ),

@@ -9,7 +9,7 @@ export default function Page({ station, price }) {
         style={{
           fontSize: 20,
           fontWeight: "bold",
-          height: 60,
+          paddingVertical: 10,
           textAlignVertical: "center",
           textAlign: "left",
           width: "100%",

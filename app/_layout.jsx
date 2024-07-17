@@ -21,6 +21,7 @@ export default function Layout() {
               backgroundColor: primaryColor,
             },
             headerTintColor: "#fff",
+            headerBackTitle:"Back"
           }}
         />
       </Stack>
