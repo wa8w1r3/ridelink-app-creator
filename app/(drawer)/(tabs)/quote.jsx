@@ -13,6 +13,7 @@ import {
   ScrollView,
 } from "react-native";
 import { primaryColor } from "../../../constants";
+import RidelinkButton from "../../../components/RidelinkButton";
 
 export default function Page() {
   const [productName, setProductName] = useState("");
@@ -92,9 +93,18 @@ export default function Page() {
             numberOfLines={4}
           />
 
-          <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+          {/* <TouchableOpacity onPress={handleSubmit} style={styles.button}>
             <Text style={styles.buttonText}>Get Quote</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <View style={{ width: "100%" }}>
+            <RidelinkButton
+              title="Get Quote"
+              onPress={() => {
+                handleSubmit();
+              }}
+              style={{ marginVertical: 10 }}
+            />
+          </View>
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>
@@ -115,11 +125,10 @@ const styles = StyleSheet.create({
   input: {
     width: "100%",
     padding: 10,
-    paddingHorizontal: 25,
     marginVertical: 10,
     borderWidth: 1,
     borderColor: primaryColor,
-    borderRadius: 25,
+    borderRadius: 10,
     borderCurve: "continuous",
     backgroundColor: "#fff",
     elevation: 5,
