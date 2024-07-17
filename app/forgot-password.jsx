@@ -88,6 +88,8 @@ const styles = StyleSheet.create({
     borderColor: primaryColor,
     borderRadius: 10,
     borderCurve: "continuous",
+    backgroundColor: "#fff",
+    elevation: 5,
   },
 
   linkContainer: {

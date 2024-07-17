@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     width: "75%",
     alignItems: "center",
   },
-  
+
   input: {
     width: "100%",
     padding: 10,
@@ -111,6 +111,8 @@ const styles = StyleSheet.create({
     borderColor: primaryColor,
     borderRadius: 10,
     borderCurve: "continuous",
+    backgroundColor: "#fff",
+    elevation: 5,
   },
   forgotPasswordContainer: {
     alignSelf: "flex-end",
@@ -121,7 +123,6 @@ const styles = StyleSheet.create({
     textAlign: "right",
   },
 
- 
   linkContainer: {
     marginTop: 10,
     alignItems: "center",
