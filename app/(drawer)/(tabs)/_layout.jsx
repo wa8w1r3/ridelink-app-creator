@@ -84,7 +84,7 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
-        name="airpot"
+        name="airport"
         options={{
           tabBarLabel: "Airport",
           tabBarIcon: ({ color, size }) => (
