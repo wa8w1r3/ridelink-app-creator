@@ -1,7 +1,7 @@
 import { Drawer } from "expo-router/drawer";
 import CustomDrawerContent from "../../components/CustomDrawerContent";
 import { primaryColor } from "../../constants";
-import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import HeaderTitle from "../../components/HeaderTitle";
 import HeaderRight from "../../components/HeaderRight";
 
