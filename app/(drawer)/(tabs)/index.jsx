@@ -162,11 +162,15 @@ export default function Page() {
               >
                 <View>
                   <View style={{ flexDirection: "row" }}>
-                    <Entypo name="location-pin" color="#ccc" size={14} />
+                    <Entypo
+                      name="location-pin"
+                      color={primaryColor}
+                      size={14}
+                    />
                     <Text
                       style={{
                         fontSize: 10,
-                        color: primaryColor,
+                        color: "#ccc",
                       }}
                     >
                       From
@@ -231,11 +235,15 @@ export default function Page() {
               >
                 <View>
                   <View style={{ flexDirection: "row" }}>
-                    <Entypo name="location-pin" color="#ccc" size={14} />
+                    <Entypo
+                      name="location-pin"
+                      color={primaryColor}
+                      size={14}
+                    />
                     <Text
                       style={{
                         fontSize: 10,
-                        color: primaryColor,
+                        color: "#ccc",
                       }}
                     >
                       From
@@ -300,11 +308,15 @@ export default function Page() {
               >
                 <View>
                   <View style={{ flexDirection: "row" }}>
-                    <Entypo name="location-pin" color="#ccc" size={14} />
+                    <Entypo
+                      name="location-pin"
+                      color={primaryColor}
+                      size={14}
+                    />
                     <Text
                       style={{
                         fontSize: 10,
-                        color: primaryColor,
+                        color: "#ccc",
                       }}
                     >
                       From
