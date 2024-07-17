@@ -1,5 +1,5 @@
 import { Image } from "expo-image";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import {
   StyleSheet,
@@ -10,8 +10,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-
-const primaryColor = "rgb(31,144,130)";
+import { primaryColor } from "../constants";
 
 export default function Page() {
   const [email, setEmail] = useState("");
@@ -21,6 +20,7 @@ export default function Page() {
     // Handle login logic
     console.log("Email:", email);
     console.log("Password:", password);
+    router.replace("(drawer)/(tabs)");
   };
 
   return (
@@ -36,7 +36,6 @@ export default function Page() {
       />
 
       <View style={styles.inputContainer}>
-        <Text style={styles.title}>Login</Text>
         <TextInput
           placeholder="Email"
           value={email}
@@ -44,6 +43,7 @@ export default function Page() {
           style={styles.input}
           keyboardType="email-address"
           autoCapitalize="none"
+          cursorColor={primaryColor}
         />
         <TextInput
           placeholder="Password"
@@ -51,10 +51,22 @@ export default function Page() {
           onChangeText={setPassword}
           style={styles.input}
           secureTextEntry
+          cursorColor={primaryColor}
         />
+        <View style={styles.forgotPasswordContainer}>
+          <Link href="/forgot-password">
+            <Text style={styles.forgotPasswordText}>Forgot password?</Text>
+          </Link>
+        </View>
         <TouchableOpacity onPress={handleLogin} style={styles.button}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
+        <View style={styles.linkContainer}>
+          <Text>Don't have an account?</Text>
+          <Link href="/signup">
+            <Text style={styles.linkText}> Sign Up</Text>
+          </Link>
+        </View>
       </View>
     </KeyboardAvoidingView>
   );
@@ -65,7 +77,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
   },
   logo: {
     height: 100,
@@ -90,6 +102,14 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderCurve: "continuous",
   },
+  forgotPasswordContainer: {
+    alignSelf: "flex-end",
+  },
+  forgotPasswordText: {
+    color: primaryColor,
+    marginBottom: 10,
+    textAlign: "right",
+  },
   button: {
     width: "100%",
     padding: 15,
@@ -111,5 +131,13 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  linkContainer: {
+    marginTop: 15,
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  linkText: {
+    color: primaryColor,
   },
 });
