@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.oen.clone"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +32,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "statusBar": {
+      "backgroundColor": "#FFFFFF",
+      "barStyle": "dark-content"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "755edba7-5778-4b6c-8569-7be5a4e48269"
+      }
     }
   }
 }
