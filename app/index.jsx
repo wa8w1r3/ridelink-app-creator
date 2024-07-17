@@ -44,7 +44,6 @@ export default function Page() {
                 display === index ? { backgroundColor: primaryColor } : null,
               ]}
               onPress={() => {
-                console.log(index);
                 pagerViewRef.current?.setPage(index);
               }}
             />
