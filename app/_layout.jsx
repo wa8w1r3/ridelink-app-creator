@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { primaryColor } from "../constants";
 
 export default function Layout() {
   return (
@@ -16,6 +17,10 @@ export default function Layout() {
             headerShadowVisible: false,
             title: "Forgot Password",
             headerTitleAlign: "center",
+            headerStyle: {
+              backgroundColor: primaryColor,
+            },
+            headerTintColor: "#fff",
           }}
         />
       </Stack>
