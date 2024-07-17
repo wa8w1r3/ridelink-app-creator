@@ -1,4 +1,4 @@
-import { Text, Pressable, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function RidelinkButton({ title, onPress, style }) {
@@ -14,9 +14,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgb(31,144,130)",
     color: "white",
     paddingHorizontal: 40,
-    paddingVertical: 10,
-    borderRadius: 25,
-    // marginBottom: 50,
+    paddingVertical: 12,
+    borderRadius: 10,
     elevation: 5,
   },
   text: {
