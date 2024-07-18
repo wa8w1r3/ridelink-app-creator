@@ -86,10 +86,6 @@ export default function Page() {
             cursorColor={primaryColor}
           />
 
-          {/* <TouchableOpacity onPress={handleSignUp} style={styles.button}>
-            <Text style={styles.buttonText}>Signup</Text>
-          </TouchableOpacity> */}
-
           <View style={{ width: "100%" }}>
             <RidelinkButton
               title="Signup"
@@ -136,11 +132,10 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 10,
     borderWidth: 1,
-    borderColor: primaryColor,
+    borderColor: "#ddd",
     borderRadius: 10,
     borderCurve: "continuous",
-    backgroundColor: "#fff",
-    elevation: 5,
+    backgroundColor: "#ddd",
   },
 
   button: {

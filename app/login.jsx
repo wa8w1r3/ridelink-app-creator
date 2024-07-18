@@ -108,11 +108,10 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 10,
     borderWidth: 1,
-    borderColor: primaryColor,
+    borderColor: "#ddd",
     borderRadius: 10,
     borderCurve: "continuous",
-    backgroundColor: "#fff",
-    elevation: 5,
+    backgroundColor: "#ddd",
   },
   forgotPasswordContainer: {
     alignSelf: "flex-end",
